@@ -14,8 +14,26 @@
         font-weight: normal;
       }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0.95;
+          transform: translateX(25px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .remark-visible h1,
+      .remark-visible h2,
+      .remark-visible p,
+      .remark-visible li,
+      .remark-visible img,
+      .remark-visible table {
+        animation: fadeIn 0.7s ease-out;
+      }
       .remark-slide-container {
-        background-image: url('pizza.jpg'); /* Pot do tvoje slike ozadja */
+        background-image: url('pizza.jpg');
         background-size: cover;
         background-position: center;
       }
@@ -25,7 +43,12 @@
         align-items: center;
         height: 30vh;
       }
- 
+      button {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        margin: auto;
+      }
     </style>
     <script type="text/javascript" async
             src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
@@ -73,7 +96,7 @@ Sedaj naredimo 2. rez (ponovno na običajen način).
 <div class="center">
   <img src="2rez.png" width="600">
 </div>
-Dobimo 4 kose.
+<p>Dobimo 4 kose.</p>
 
 ---
 ## Primer štirih rezov
@@ -81,7 +104,7 @@ Dobimo 4 kose.
 <div class="center">
   <img src="3rez.png" width="600">
 </div>
-Sedaj imamo 7 kosov.
+<p>Sedaj imamo 7 kosov.</p>
 
 ---
 ## Primer štirih rezov
@@ -89,7 +112,7 @@ Premislimo, kako dobimo največ novih kosov pice. Novi rez mora sekati vse prej�
 <div class="center">
   <img src="4rez.png" width="600">
 </div>
-Na ta način dobimo 4 nove kose. Torej imamo 11 kosov.
+<p>Na ta način dobimo 4 nove kose. Torej imamo 11 kosov.</p>
 
 ???
 - poudari, da novi rez ne sme "vijugati"
@@ -188,7 +211,7 @@ $$
 ---
 class: left, middle
 # Formula
-Formula za izračun **največjega možnega števila kosov pice pri danem številu rezov** se glasi: 
+Formula za izračun **največjega možnega števila kosov pice pri danem številu rezov** se glasi:
 
 $$
 f(n) = \frac{n \cdot (n + 1)}{2} + 1
